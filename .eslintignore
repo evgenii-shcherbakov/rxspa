@@ -1,0 +1,5 @@
+dist/
+webpack.*.js
+webpack.*.ts
+selftest.*
+src/browser/decorators/*.ts

@@ -1,0 +1,21 @@
+@import '../../styles/lib';
+
+.button {
+  padding: size(2);
+  @include flex(row, center, center);
+  background-color: $accent;
+  border-radius: size(0.5);
+
+  &:hover {
+    background-color: mix($accent, white, 80%);
+  }
+
+  &.btn {
+    background-color: $accent;
+    height: auto;
+
+    &:hover {
+      background-color: mix($accent, white, 80%);
+    }
+  }
+}

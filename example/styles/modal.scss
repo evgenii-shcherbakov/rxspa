@@ -1,0 +1,56 @@
+@import 'lib';
+
+.modal {
+  padding: size(2);
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
+  @include flex(column, flex-start, center);
+  border-radius: size(5) size(5) 0 0;
+  background-color: $secondary;
+  transform: translateY(100%);
+  transition: $tr;
+
+  @media (min-width: 600px) {
+    width: 80vw;
+    border-radius: size(5);
+    transform: translate(0, 0) scale(0);
+  }
+
+  @media (min-width: 1200px) {
+    width: 50vw;
+  }
+
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+
+  &__overlay {
+    bottom: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    @include flex(column, flex-end, center);
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: none;
+    visibility: hidden;
+
+    @media (min-width: 600px) {
+      @include flex(column, center, center);
+    }
+
+    &.active {
+      visibility: visible;
+
+      .modal {
+        transform: translateY(0);
+
+        @media (min-width: 600px) {
+          transform: translate(0, 0) scale(1);
+        }
+      }
+    }
+  }
+}

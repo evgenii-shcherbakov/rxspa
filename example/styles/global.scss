@@ -1,0 +1,43 @@
+@import 'root';
+@import 'scroll';
+@import 'lib';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: 0.3s ease-out;
+}
+
+body {
+  background-color: $main;
+  color: $primary;
+  backdrop-filter: brightness(0.3);
+}
+
+input {
+  border: 0;
+  outline: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+i.material-icons {
+  cursor: pointer;
+  font-size: 4rem;
+
+  &:hover {
+    color: $accent;
+  }
+}
+
+.content-wrapper {
+  @include scroll-view(80vh);
+}
+
+@import 'page';
+@import 'modal';
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');

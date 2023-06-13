@@ -1,0 +1,54 @@
+@import 'lib';
+
+#root {
+  height: 85vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.page {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  @include flex(column, flex-start, center);
+  background: no-repeat center;
+  background-size: cover;
+  transform: translateX(-100%);
+  opacity: 0;
+  visibility: hidden;
+  animation: 0.5s ease-out;
+
+  &.active {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &.anim-prev {
+    animation-name: prev-page-animation;
+  }
+
+  @keyframes prev-page-animation {
+    from {
+      transform: translateX(-100%) scale(0);
+    }
+    to {
+      transform: translateX(0) scale(1);
+    }
+  }
+
+  &.anim-next {
+    animation-name: next-page-animation;
+  }
+
+  @keyframes next-page-animation {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(100%) scale(0);
+    }
+  }
+}

@@ -1,0 +1,12 @@
+@import 'lib';
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+  height: 0;
+  background-color: transparent;
+
+  &-thumb {
+    background-color: $primary;
+    border-radius: 0.5rem;
+  }
+}
